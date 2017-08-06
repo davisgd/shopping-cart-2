@@ -12,9 +12,9 @@ class HomeContainer extends React.Component {
     this.getTitle
   }
 
-  getTitle = () => {
+  setTitle = () => {
     setTimeout( () => {
-      this.setState({ title: "This is my HomeContainer Title" });
+      this.setState({ title: "This is my HomeContainer Title" })
     }, 3000)
   }
 
