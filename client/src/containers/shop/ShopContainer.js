@@ -8,7 +8,8 @@ class ShopContainer extends React.Component {
     prodName: null,
     prodPrice: 0,
     prodAdjective: null,
-    prodImg: null
+    prodImg: null,
+    products: {}
   }
 
   componentDidMount() {
@@ -34,7 +35,12 @@ class ShopContainer extends React.Component {
       })
     }
 
-    this.setState({state: tempProdArray})
+    this.setState({ products: tempProdArray,
+      // prodName: tempProdArray.prodName,
+      // prodPrice: tempProdArray.prodPrice,
+      // prodAdjective: tempProdArray.prodAdjective,
+      // prodImg: tempProdArray.prodImg
+    })
   }
 
   render() {

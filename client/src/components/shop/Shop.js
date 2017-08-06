@@ -10,7 +10,7 @@ const Shop = (props) => {
       <div className="product-container">
         <h3> { props.prodAdjective } { props.prodName } </h3>
         <h4> { props.prodPrice } </h4>
-        <img src={props.prodImg} />
+        <img src={ props.prodImg } />
       </div>
     </div>
   )
