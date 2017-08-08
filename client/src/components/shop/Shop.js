@@ -8,15 +8,15 @@ const Shop = (props) => {
       </div>
 
       <div className="product-container">
-      {
-        props.prodData.map((products) => {
-          <div className="prod-card">
-            <h3> { products.prodAdjective } { products.prodName } </h3>
-            <h4> { products.prodPrice } </h4>
-            <img src={ products.prodImg } />
-          </div>
-        })
-      }
+        {
+          props.products.map((products) => {
+            <div className="prod-card">
+              <h3> { products.prodAdjective } { products.prodName } </h3>
+              <h4> { products.prodPrice } </h4>
+              <img src={ products.prodImg } />
+            </div>
+          })
+        }
       </div>
     </div>
   )
