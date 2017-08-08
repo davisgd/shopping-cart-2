@@ -8,14 +8,18 @@ const Shop = (props) => {
       </div>
 
       <div className="product-container">
-        <h3> { props.prodAdjective } { props.prodName } </h3>
-        <h4> { props.prodPrice } </h4>
-        <img src={ props.prodImg } />
+      {
+        props.prodData.map((products) => {
+          <div className="prod-card">
+            <h3> { products.prodAdjective } { products.prodName } </h3>
+            <h4> { products.prodPrice } </h4>
+            <img src={ products.prodImg } />
+          </div>
+        })
+      }
       </div>
     </div>
   )
 }
-
-
 
 export default Shop;

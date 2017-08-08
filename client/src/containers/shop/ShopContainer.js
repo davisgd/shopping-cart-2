@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import {Shop} from '../../components';
+import { Shop } from '../../components';
 
 class ShopContainer extends React.Component {
   state = {
@@ -9,11 +9,13 @@ class ShopContainer extends React.Component {
     prodPrice: 0,
     prodAdjective: null,
     prodImg: null,
-    products: {}
+    products: null
   }
 
   componentDidMount() {
     this.setTitle();
+    this.fetchProdDataFromServer();
+    console.log(this.state.products);
   }
 
   setTitle = () => {
@@ -35,12 +37,9 @@ class ShopContainer extends React.Component {
       })
     }
 
-    this.setState({ products: tempProdArray,
-      // prodName: tempProdArray.prodName,
-      // prodPrice: tempProdArray.prodPrice,
-      // prodAdjective: tempProdArray.prodAdjective,
-      // prodImg: tempProdArray.prodImg
-    })
+    setTimeout(() => {
+      this.setState({ products: tempProdArray })
+    }, 3000)
   }
 
   render() {
@@ -56,12 +55,9 @@ class ShopContainer extends React.Component {
 
         <div>
           {
-            <Shop
-              prodAdjective={ this.state.prodAdjective }
-              prodName={ this.state.prodName }
-              prodPrice={ this.state.prodPrice }
-              prodImg={ this.state.prodImg }
-            />
+            this.state.products
+            ? <Shop prodData={ this.state.products }  />
+            : <h3> No Shop state yet </h3>
           }
         </div>
       </div>
