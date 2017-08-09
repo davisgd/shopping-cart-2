@@ -15,7 +15,6 @@ class ShopContainer extends React.Component {
   componentDidMount() {
     this.setTitle();
     this.fetchProdDataFromServer();
-    console.log(this.state.products);
   }
 
   setTitle = () => {
@@ -33,8 +32,9 @@ class ShopContainer extends React.Component {
         prodName: faker.commerce.productName(),
         prodPrice: faker.commerce.price(),
         prodAdjective: faker.commerce.productAdjective(),
-        prodImg: faker.image.technics()
+        prodImg: faker.image.technics(),
       })
+      console.log(tempProdArray)
     }
 
     setTimeout(() => {
@@ -49,7 +49,7 @@ class ShopContainer extends React.Component {
           {
             this.state.title
             ? <Shop title={ this.state.title }/>
-            : <h1>No Shop state yet</h1>
+            : <h1>Loading Title...</h1>
           }
         </div>
 
@@ -57,7 +57,7 @@ class ShopContainer extends React.Component {
           {
             this.state.products
             ? <Shop prodData={ this.state.products }  />
-            : <h3> No Shop state yet </h3>
+            : <h3> Loading Products...</h3>
           }
         </div>
       </div>

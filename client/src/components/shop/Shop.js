@@ -9,12 +9,14 @@ const Shop = (props) => {
 
       <div className="product-container">
         {
-          props.products.map((products) => {
-            <div className="prod-card">
-              <h3> { products.prodAdjective } { products.prodName } </h3>
-              <h4> { products.prodPrice } </h4>
-              <img src={ products.prodImg } />
-            </div>
+          props.prodData.map((product) => {
+            return(
+              <div className="prod-card">
+                <h3> { product.prodAdjective } { product.prodName } </h3>
+                <h4> { product.prodPrice } </h4>
+                <img src={ product.prodImg } />
+              </div>
+            )
           })
         }
       </div>
