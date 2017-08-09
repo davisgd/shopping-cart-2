@@ -32,7 +32,7 @@ class ShopContainer extends React.Component {
         prodName: faker.commerce.productName(),
         prodPrice: faker.commerce.price(),
         prodAdjective: faker.commerce.productAdjective(),
-        prodImg: faker.image.technics(),
+        prodImg: faker.random.image()
       })
       console.log(tempProdArray)
     }
@@ -44,23 +44,13 @@ class ShopContainer extends React.Component {
 
   render() {
     return(
-      <div>
-        <div>
-          {
-            this.state.title
-            ? <Shop title={ this.state.title }/>
-            : <h1>Loading Title...</h1>
-          }
-        </div>
-
         <div>
           {
             this.state.products
-            ? <Shop prodData={ this.state.products }  />
+            ? <Shop prodData={ this.state.products } title={ this.state.title } />
             : <h3> Loading Products...</h3>
           }
         </div>
-      </div>
     )
   }
 }
