@@ -19,7 +19,7 @@ class ShopContainer extends React.Component {
 
   setTitle = () => {
     setTimeout(() => {
-      this.setState({title: "My Special Shop of Random Crap"})
+      this.setState({title:"My Special Shop of Random Crap"})
     }, 1000)
   }
 
@@ -27,7 +27,7 @@ class ShopContainer extends React.Component {
 
     const tempProdArray = [];
 
-    for(let n = 0; n < 20; n += 1){
+    for(let n = 0; n < 25; n += 1){
       tempProdArray.push({
         prodName: faker.commerce.productName(),
         prodPrice: faker.commerce.price(),
@@ -38,7 +38,7 @@ class ShopContainer extends React.Component {
     }
 
     setTimeout(() => {
-      this.setState({ products: tempProdArray })
+      this.setState({products:tempProdArray})
     }, 3000)
   }
 
