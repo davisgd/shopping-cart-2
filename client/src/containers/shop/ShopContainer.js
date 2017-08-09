@@ -9,7 +9,8 @@ class ShopContainer extends React.Component {
     prodPrice: 0,
     prodAdjective: null,
     prodImg: null,
-    products: null
+    products: null,
+    cart: []
   }
 
   componentDidMount() {
@@ -34,23 +35,29 @@ class ShopContainer extends React.Component {
         prodAdjective: faker.commerce.productAdjective(),
         prodImg: faker.random.image()
       })
-      console.log(tempProdArray)
     }
 
     setTimeout(() => {
-      this.setState({products:tempProdArray})
+      this.setState({ products:tempProdArray })
     }, 3000)
+  }
+
+  addItemToCart = (product) => {
+    const tempCart = this.state.cart
+    tempCart.push(product)
+    this.setState({ cart: tempCart })
+    alert(`${product.prodName} added to cart!`)
   }
 
   render() {
     return(
-        <div>
-          {
-            this.state.products
-            ? <Shop prodData={ this.state.products } title={ this.state.title } />
-            : <h3> Loading Products...</h3>
-          }
-        </div>
+        this.state.products
+        ? <Shop
+        prodData={ this.state.products }
+        title={ this.state.title }
+        addItem={ this.addItemToCart }
+        />
+        : <h3> Loading Products...</h3>
     )
   }
 }

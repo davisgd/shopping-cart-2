@@ -1,0 +1,11 @@
+.navlinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+}
