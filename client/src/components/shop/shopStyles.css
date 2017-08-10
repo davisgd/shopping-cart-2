@@ -1,0 +1,32 @@
+.product-container {
+  display: flex;
+  border: 2px solid red;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 150px;
+}
+
+.prod-card {
+  border: 2px solid blue;
+  margin: 10px;
+  width: 30%;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.prod-card button {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.prod-img {
+  width: 100%;
+  height: inherit;
+  justify-content: center;
+}

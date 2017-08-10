@@ -1,4 +1,5 @@
 import React from 'react';
+import './shopStyles.css';
 
 const ShopTile = (props) => {
   const product = props.product
@@ -7,7 +8,7 @@ const ShopTile = (props) => {
     <div className="prod-card">
       <h3> { product.prodAdjective } { product.prodName } </h3>
       <h4> { product.prodPrice } </h4>
-      <img src={ product.prodImg } />
+      <img className="prod-img" src={ product.prodImg } />
       <button className="add-to-card-button" onClick={() => props.addItem(product)}>Add to Cart</button>
     </div>
   )

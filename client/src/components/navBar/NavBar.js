@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './navBarStyles.css';
 
 
 // const styles = {
@@ -11,7 +12,7 @@ import { Link } from 'react-router-dom';
 //   }
 // }
 
-const NavBar = () => {
+const NavBar = (props) => {
   const isActive = true
 
   return(
@@ -22,6 +23,9 @@ const NavBar = () => {
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/my-about-page'>About</Link></li>
             <li><Link to='/my-shop-page'>Shop</Link></li>
+            <li><Link to='/user-profile'>User Profiles</Link></li>
+            <li><Link to='/my-shopping-cart' className="cart-counter"><h3>Items in Cart: { props.cartCount } Total: ${ props.totalCartPrice }</h3></Link></li>
+
           </ul>
         </div>
       </nav>
