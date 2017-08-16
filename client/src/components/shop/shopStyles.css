@@ -10,7 +10,7 @@
 .prod-card {
   border: 2px solid blue;
   margin: 10px;
-  width: 30%;
+  width: calc(33.3333333% - 20px);
   padding: 10px;
   border-radius: 20px;
   display: flex;

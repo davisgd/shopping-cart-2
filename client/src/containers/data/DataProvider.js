@@ -11,24 +11,20 @@ class DataProvider extends React.Component {
     prodImg: null,
     products: null,
     cart: [],
-    user: null,
+    users: [],
     isDataLoaded: false
   }
 
   componentDidMount() {
     this.setTitle();
     this.fetchProdDataFromServer();
-    this.setUser();
+    this.createUser();
   }
 
   setTitle = () => {
     setTimeout(() => {
       this.setState({title:"My Special Shop of Random Crap"})
     }, 1000)
-  }
-
-  setUser = () => {
-    this.setState({ user: this.createUser(), isDataLoaded: true })
   }
 
   fetchProdDataFromServer = () => {
@@ -57,13 +53,17 @@ class DataProvider extends React.Component {
   }
 
   createUser = () => {
-    const user = {
-      firstName: faker.name.firstName(),
-      lastName: faker.name.lastName(),
-      email: faker.internet.email(),
-      avatar: faker.internet.avatar(),
+    const tempUserArray = this.state.users
+
+    for(let n = 0; n < 25; n += 1){
+      tempUserArray.push({
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        email: faker.internet.email(),
+        avatar: faker.internet.avatar(),
+      })
     }
-    return user;
+    this.setState({users: tempUserArray})
   }
 
   render() {
@@ -80,7 +80,7 @@ class DataProvider extends React.Component {
           addItem={ this.addItemToCart }
           cart={ this.state.cart }
           totalCartPrice={ totalCartPrice.toFixed(2) }
-          user={ this.state.user }
+          users={ this.state.users }
         />
         : <h3> Loading Products...</h3>
     )

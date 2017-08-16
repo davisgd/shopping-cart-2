@@ -1,0 +1,35 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "\"# shopping-cart-2\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "SET NODE_ENV=test && mocha --timeout 10000 ",
+    "start": "SET NODE_ENV=dev && nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davisgd/shopping-cart-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davisgd/shopping-cart-2/issues"
+  },
+  "homepage": "https://github.com/davisgd/shopping-cart-2#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "react-scripts": "1.0.11"
+  }
+}

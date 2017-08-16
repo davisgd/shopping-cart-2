@@ -1,17 +1,23 @@
 import React from 'react';
+import ProfileTile from './ProfileTile';
 
 const styles = {
   container: {
-    padding: "150px"
+    padding: "150px",
+    border: "1px solid red"
   }
 }
 
 const Profile = (props) => {
   return(
-    <div style={styles.container}>
-      <h1>{ props.user.firstName } { props.user.lastName }</h1>
-      <h3>{ props.user.email }</h3>
-      <img src={ props.user.avatar } />
+    <div className="profile-container" style={ styles.container }>
+      {
+        props.users.map((user) => {
+          return(
+            <ProfileTile user={ user } />
+          )
+        })
+      }
     </div>
   )
 }
