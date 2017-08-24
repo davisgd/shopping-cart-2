@@ -12,7 +12,8 @@ class DataProvider extends React.Component {
     products: null,
     cart: [],
     users: [],
-    isDataLoaded: false
+    isDataLoaded: false,
+    product: {}
   }
 
   componentDidMount() {
@@ -43,6 +44,13 @@ class DataProvider extends React.Component {
     setTimeout(() => {
       this.setState({ products: tempProdArray })
     }, 3000)
+  }
+
+  onChange = (type, value) => {
+    const newProduct = this.state.product
+    newProduct[type] = value
+    this.setState({ product: newProduct })
+    console.log(this.state.product)
   }
 
   addItemToCart = (product) => {
@@ -81,6 +89,7 @@ class DataProvider extends React.Component {
           cart={ this.state.cart }
           totalCartPrice={ totalCartPrice.toFixed(2) }
           users={ this.state.users }
+          onChange={ this.onChange }
         />
         : <h3> Loading Products...</h3>
     )
